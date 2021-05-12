@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - project
+  
+
+volumes:
+  db:
+    name: db
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USERNAME}/data/db
+
+networks:
+  project:
+    driver: bridge
