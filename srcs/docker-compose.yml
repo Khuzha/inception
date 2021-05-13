@@ -8,7 +8,24 @@ services:
       - db:/var/lib/mysql
     networks:
       - project
-  
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    volumes:
+      - db:/var/www/html/wp-content
+    networks:
+      - project
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
 
 volumes:
   db:
@@ -18,6 +35,13 @@ volumes:
       type: none
       o: bind
       device: /home/${USERNAME}/data/db
+  wp:
+    name: wp
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USERNAME}/data/wp
 
 networks:
   project:
