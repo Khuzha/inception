@@ -14,4 +14,4 @@ echo "update mysql.user set plugin='mysql_native_password' where user='${DB_USER
 echo "FLUSH PRIVILEGES;";
 echo "FLUSH PRIVILEGES;" | mariadb;
 
-tail -f /dev/null;
+mysqld;

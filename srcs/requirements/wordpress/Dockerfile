@@ -13,4 +13,6 @@ RUN apt update && \
 
 COPY ./tools/* /tmp/
 
+EXPOSE 9000
+
 CMD bash /tmp/start.sh
