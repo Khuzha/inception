@@ -9,7 +9,6 @@ services:
     networks:
       - project
     environment:
-      DB_HOST: ${DB_HOST}
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -18,10 +17,15 @@ services:
     container_name: wordpress
     build: ./requirements/wordpress
     volumes:
-      - db:/var/www/html/wp-content
+      - wp:/var/www/html/wp-content
     networks:
       - project
+    depends_on:
+      - mariadb
+    ports:
+      - "5021:9000"
     environment:
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
       DB_HOST: ${DB_HOST}
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}

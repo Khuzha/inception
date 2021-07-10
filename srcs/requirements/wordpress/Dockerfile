@@ -11,9 +11,6 @@ RUN apt update && \
   chown -R www-data:www-data /var/www/html/wordpress && \
   chmod -R 775 /var/www/html/wordpress
 
-
 COPY ./tools/* /tmp/
-
-EXPOSE 3306
 
 CMD bash /tmp/start.sh

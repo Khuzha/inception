@@ -2,7 +2,8 @@ FROM debian
 
 LABEL maintainer="zskeeter"
 
-RUN apt update
+RUN apt update && \
+  apt install -y mariadb-server
 
 COPY ./tools/* /tmp/
 

@@ -1,5 +1,8 @@
 <?php
 
+define( 'WPSITEURL', 'http://localhost:8080/');
+define( 'WPHOME', 'http://localhost:8080/');
+
 define( 'DB_NAME', '${DB_NAME}' );
 define( 'DB_USER', '${DB_USER}' );
 define( 'DB_PASSWORD', '${DB_PASSWORD}' );
