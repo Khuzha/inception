@@ -1,7 +1,8 @@
 <?php
 
-define( 'WPSITEURL', 'http://localhost:8080/');
-define( 'WPHOME', 'http://localhost:8080/');
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_LOG', true );
 
 define( 'DB_NAME', '${DB_NAME}' );
 define( 'DB_USER', '${DB_USER}' );

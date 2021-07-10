@@ -3,7 +3,7 @@ FROM debian
 LABEL maintainer="zskeeter"
 
 RUN apt update && \
-  apt install -y mariadb-server
+  apt install -y mariadb-server nano curl net-tools
 
 COPY ./tools/* /tmp/
 

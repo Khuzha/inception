@@ -8,6 +8,8 @@ services:
       - db:/var/lib/mysql
     networks:
       - project
+    ports:
+      - "5121:3306"
     environment:
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
