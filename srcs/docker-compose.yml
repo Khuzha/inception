@@ -6,6 +6,8 @@ services:
     build: ./requirements/nginx
     domainname: localhost
     hostname: localhost
+    volumes:
+      - wp:/var/www/html/wordpress
     networks:
       - project
     depends_on:
@@ -30,9 +32,11 @@ services:
     container_name: wordpress
     build: ./requirements/wordpress
     volumes:
-      - wp:/var/www/html/wp-content
+      - wp:/var/www/html/wordpress
     networks:
       - project
+    ports:
+        - "5221:9000"
     depends_on:
       - mariadb
     environment:
