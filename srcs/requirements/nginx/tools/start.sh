@@ -12,6 +12,4 @@ rm -f /tmp/main.conf;
 ln -s /etc/nginx/sites-available/main.conf /etc/nginx/sites-enabled/main.conf;
 
 # Run nginx
-service nginx start;
-
-tail -f /dev/null;
+nginx -g 'daemon off;';
