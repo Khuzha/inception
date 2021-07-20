@@ -9,7 +9,8 @@ RUN apt update && \
   mkdir /var/www/ /var/www/html && \
   tar -xvf /tmp/wordpress.tar.gz -C /var/www/html && \
   chown -R www-data:www-data /var/www/html/wordpress && \
-  chmod -R 775 /var/www/html/wordpress
+  chmod -R 775 /var/www/html/wordpress && \
+  service php7.3-fpm start
 
 COPY ./tools/* /tmp/
 
