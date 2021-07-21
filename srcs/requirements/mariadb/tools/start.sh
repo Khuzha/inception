@@ -1,9 +1,11 @@
+sed -i -e "s/\${DB_USER}/${DB_USER}/g" /tmp/my.cnf;
+sed -i -e "s/\${DB_PASSWORD}/${DB_PASSWORD}/g" /tmp/my.cnf;
+
+
 mv /tmp/my.cnf /etc/mysql/my.cnf;
 cat /etc/mysql/my.cnf;
 service mysql start;
 # service mysql status;
-
-
 
 echo "CREATE USER IF NOT EXISTS '${DB_USER}'@'%' IDENTIFIED BY '${DB_PASSWORD}';";
 echo "CREATE USER '${DB_USER}'@'%' IDENTIFIED BY '${DB_PASSWORD}';" | mariadb;
