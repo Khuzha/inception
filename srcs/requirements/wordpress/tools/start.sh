@@ -12,5 +12,12 @@ chgrp -R www-data /var/www/html/wordpress;
 
 # php -S 0.0.0.0:9000 -t /var/www/html/wordpress;
 
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pharж
+php wp-cli.phar --infoж
+chmod +x wp-cli.pharж
+sudo mv wp-cli.phar /usr/local/bin/wpж
+wp core install --allow-root --url=zskeeter.42.fr --title=21 --admin_user=boss --admin_email=boss@boss.comж
+wp user create sardorkhuja sardorkhuja@khuzha.com --role=author --allow-root;
+
 # tail -f /dev/null;
 /usr/sbin/php-fpm7.3 -F
