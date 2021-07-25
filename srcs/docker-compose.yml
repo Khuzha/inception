@@ -19,6 +19,8 @@ services:
     container_name: mariadb
     restart: always
     build: ./requirements/mariadb
+    volumes:
+      - db:/var/lib/mysql
     ports:
       - "5121:3306"
     networks:
